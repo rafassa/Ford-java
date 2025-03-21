@@ -8,12 +8,17 @@ let carouselArr = [];
 //class Carousel
 class Carousel {
 
-    constructor(img, titulo){
+   
+
+    constructor(img, titulo, url){
         this.img = img
         this.titulo = titulo
+        this.url = url
     }
       
     static Start(arr){
+        this.titulos = document.querySelectorAll("main div a")
+        this.imagens = document.querySelectorAll("main div img")
         if(arr){
             console.log(carouselArr)
             if(arr.length > 0){
@@ -29,25 +34,48 @@ class Carousel {
     }
 
     static Next(){
+       
+     for(let i = 0; i < this.imagens.length; i++){
+        this.imagens[i].style.display ="none";
+        this.imagens[this._sequence].style.display = "block";
+        this.titulos[i].style.display = "none"
+        this.titulos[this._sequence].style.display = "block";
+
+        console.log(this._sequence)
         
+        
+     }
+     this._sequence++
+     if(this._sequence == this._size){
+        this.imagens[0].style.display = "none";
+        this._sequence = 0;
+    }
     }
 };
 
 
 
 carouselArr.push(new Carousel("img\\imagem_1.jpg","Esta é a nova Ranger Ford 2022. Verifique novidades.","lancamento.html"));
-carouselArr.push(new Carousel("img\\imagem_2.jpg","Ford a nossa história","#"));
+carouselArr.push(new Carousel("img\\imagem_2.jpg","Ford a nossa história","https://www.ford.pt/experiencia-ford/ford-blog/o-nosso-legado#"));
 carouselArr.push(new Carousel("img\\imagem_3.jpg","Nova Ford Bronco Sport 2022","lancamento.html"));
 
-console.log(carouselArr[0].img)
+// console.log(carouselArr[0].img)
 
 for(let i = 0; i < carouselArr.length; i++ ){
-let teste = document.createElement("img")
-teste.setAttribute("src", carouselArr[i].img);
- 
-document.getElementById("carousel").insertAdjacentElement("beforeEnd", teste)
+let img = document.createElement("img")
+img.setAttribute("src", carouselArr[i].img);
+document.getElementById("carousel").insertAdjacentElement("beforeEnd", img)
+
+let texto = document.createElement("a")
+texto.innerText = carouselArr[i].titulo
+texto.setAttribute("href",carouselArr[i].url)
+
+document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", texto)
+
 
 }
+
+
 
 Carousel.Start(carouselArr);
 
