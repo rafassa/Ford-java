@@ -66,29 +66,16 @@ function HideCompare(){
 }
 
 function UpdateCompareTable() {
-    Object.value(carDict).forEach(value => {
-        
-    
-        console.log("um minutp",document.getElementById(`compare_modelo_${i}`))
-
-    document.getElementById(`compare_alturacacamba_${i}`)
-
-    document.getElementById(`compare_alturasolo_${i}`)
-
-    document.getElementById(`compare_capacidadecarga_${i}`)
-
-    document.getElementById(`compare_motor_${i}`)
-
-    document.getElementById(`compare_potencia_${i}`)
-
-    document.getElementById(`compare_potencia_${i}`)
-
-    document.getElementById(`compare_volumecacamba_${i}`)
-
-    document.getElementById(`compare_volumecacamba_${i}`)
-
-    document.getElementById(`compare_preco_${i}`)
-}) 
-  
-
-}
+    Object.values(carDict).forEach((value, i) => {
+        document.getElementById(`compare_modelo_${i}`).innerText = value.modelo;
+        document.getElementById(`compare_alturacacamba_${i}`).innerText = value.alturaCacamba;
+        document.getElementById(`compare_alturaveiculo_${i}`).innerText = value.alturaVeiculo;
+        document.getElementById(`compare_alturasolo_${i}`).innerText = value.alturaSolo;
+        document.getElementById(`compare_capacidadecarga_${i}`).innerText = value.capacidadeCarga;
+        document.getElementById(`compare_motor_${i}`).innerText = value.motor;
+        document.getElementById(`compare_potencia_${i}`).innerText = value.potencia;
+        document.getElementById(`compare_volumecacamba_${i}`).innerText = value.volumeCacamba;
+        document.getElementById(`compare_roda_${i}`).innerText = value.roda;
+        document.getElementById(`compare_preco_${i}`).innerText = value.preco;
+    });
+} 
