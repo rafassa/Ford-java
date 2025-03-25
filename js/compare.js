@@ -33,15 +33,16 @@ function SetCarToCompare(el, carClass) {
     if(carClass instanceof Car){       
         if(el.checked){
             carDict[el.value] = carClass;
-            
+
 
             GetcarDictPosition()
-           
+            console.log("entrada", carDict)
+
         }
         else{
             lista = lista.filter(valor => valor !== el.value);
             delete carDict[el.value]
-            
+            console.log("saida", carDict)
             
         }
     } else {
@@ -66,8 +67,12 @@ function HideCompare(){
 }
 
 function UpdateCompareTable() {
+  document.querySelectorAll("table tr img").forEach(element => {element.remove()});
     Object.values(carDict).forEach((value, i) => {
-        document.getElementById(`compare_modelo_${i}`).innerText = value.modelo;
+        let imagem = document.createElement("img")
+        imagem.setAttribute("src",  value.image )
+        document.getElementById(`compare_image_${i}`).insertAdjacentElement("beforeend", imagem)
+        document.getElementById(`compare_modelo_${i}`).innerText = value.nome;
         document.getElementById(`compare_alturacacamba_${i}`).innerText = value.alturaCacamba;
         document.getElementById(`compare_alturaveiculo_${i}`).innerText = value.alturaVeiculo;
         document.getElementById(`compare_alturasolo_${i}`).innerText = value.alturaSolo;

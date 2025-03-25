@@ -46,40 +46,72 @@ img.photocar {
 }
 
 table {
+    display: flex;
+    justify-content: center;
     border-collapse: collapse;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     margin-top: 2vh;
-    margin-bottom: 10px;
+    margin-bottom: 1%;
+    img{width:80%;}
   }
   
   th, td {
+    font-size: small;
     text-align: left;
-    padding: 8px;
+    padding: 1%;
+    font-size: 100%;
+    
   }
 
+tbody{
+    padding: 1%;
+}
+
+  
   td:nth-child(1) {  
     font-weight: 700;
-    width: 40%;
+   
   }
+
 
   tr:nth-child(even) {background-color: #f2f2f2;}
 
 div#compare {
     position: absolute;
+    display: flex;
+    
     display: none;
-    width: 50vw;
-    max-width: 800px;
-    min-width: 400px;
-    height: 80vh;
-    max-height: 700px;
-    min-height: 350px;
+    width: 80vw;
+    align-items: center;
+    min-height: 55vh;
+    max-height: 80vh;
+    left: 5%;
     background: #fff;
-    top: calc(100vh - 80%);
-    left: 25vw;
+    top: 20vh;
+   
     border-radius: 10px;
-    padding: 10px;
+   
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+    /* img{width: 100%;} */
+}
+
+
+#botaoTable{
+width: 30%;
+height: 2em;
+font-size: small;
+text-align: center;
+}
+
+#divbotao{
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width:600px) {
+    table{
+        img{width:5em;}
+    }
 }
