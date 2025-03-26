@@ -17,6 +17,32 @@ img.photocar {
     width: 250px;
 }
 
+.divTotal{
+    display: flex;
+    height: 30vh;
+    min-width: 100%;
+}
+.videoDiv{
+height: 100%;   
+}
+
+.textoDiv{
+min-width: 30%;
+max-width: 30%;
+}
+
+.video{
+aspect-ratio: 16 / 9;
+width: 100%;
+}
+
+.texto{
+    text-align: justify;
+    
+}
+
+
+
 .checkbox {
     width: 30px;
     height: 30px;
@@ -59,7 +85,7 @@ table {
     font-size: small;
     text-align: left;
     padding: 1%;
-    font-size: 100%;
+    font-size: 1em;
     
   }
 
@@ -79,16 +105,16 @@ tbody{
 div#compare {
     position: absolute;
     display: flex;
-    
     display: none;
-    width: 80vw;
+    width: 55%;
     align-items: center;
-    min-height: 55vh;
-    max-height: 80vh;
-    left: 5%;
+    
+    min-height: 55% ;
+    max-height: 80%;
+    font-size: 90%;
+    float: right;
     background: #fff;
     top: 20vh;
-   
     border-radius: 10px;
    
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
@@ -101,7 +127,7 @@ div#compare {
 width: 30%;
 height: 2em;
 font-size: small;
-text-align: center;
+text-align: e;
 }
 
 #divbotao{
@@ -110,8 +136,3 @@ text-align: center;
 }
 
 
-@media screen and (max-width:600px) {
-    table{
-        img{width:5em;}
-    }
-}

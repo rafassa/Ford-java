@@ -4,10 +4,13 @@ body {
     background: #FFFFFF;
     min-height: 100dvh;
     max-height: 100dvh;
-
+    min-width: 100dvw;
+    max-width: 100dvw;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 html {
@@ -50,10 +53,11 @@ ul {
 }
 
 header {
+    width: 100%;
     background: #FFFFFF;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
-    padding: 10px;
+
 }
 
 header div {
@@ -91,6 +95,7 @@ main {
   
     flex: 1;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     justify-content: center;
 }
@@ -113,6 +118,7 @@ footer {
     background: #1B357E;
     padding-top: 1%;
     padding-bottom: 1%;
+    width: 100%;
 }
 
 footer div {
