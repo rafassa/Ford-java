@@ -2,13 +2,14 @@
 ul.modelcars {
     display: block;
     text-align: center;
+    margin-top: 20%;
     margin-bottom: 40px;
 }
 
 ul.modelcars li {
     display: inline-block;
     text-align: left;
-    width: 300px;
+ 
     vertical-align: top;
 }
 
@@ -21,9 +22,10 @@ img.photocar {
     display: flex;
     height: 30vh;
     min-width: 100%;
+    justify-content: center;
 }
 .videoDiv{
-height: 100%;   
+width: 50em;
 }
 
 .textoDiv{
