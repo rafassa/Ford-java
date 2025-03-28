@@ -2,6 +2,7 @@
 ul.modelcars {
     display: block;
     text-align: center;
+
     margin-top: 10%;
     margin-bottom: 40px;
    width: 100%;
@@ -10,7 +11,7 @@ ul.modelcars {
 ul.modelcars li {
     display: inline-block;
     text-align: left;
-    width: 25%;
+   
     vertical-align: top;
 
 }
@@ -22,7 +23,7 @@ ul.modelcars li {
 
 @media only screen and (max-width:950PX){
     ul.modelcars li {
-        width: 50%;
+        width: 100%;
         
     }
 
@@ -40,13 +41,14 @@ ul.modelcars li {
 
 img.photocar {
     display: block;
-    width: 250px;
+    width: 100%;
+    
 }
 
 .divTotal{
     padding-top: 1%;
     display: flex;
-    height: 63vh;
+    height: 100%;
     min-width: 100%;
     justify-content: center;
     align-items: center;
@@ -56,11 +58,12 @@ img.photocar {
    display: flex;
    flex-direction: column;
    align-items: center;
-    width: 100%;
-  
+    width: 59%;
+  justify-self: center;
+    
 }
 .videoDiv{
-width: 60%;
+width: 90%;
 
 }
 
@@ -69,6 +72,7 @@ min-width: 30%;
 max-width: 30%;
 align-items: center;
 align-self: center;
+
 }
 
 .video{
@@ -78,7 +82,7 @@ width: 100%;
 
 .texto{
     text-align: justify;
-    
+
 }
 
 .divbotao{
@@ -133,6 +137,7 @@ table {
 
 tbody{
     padding: 1%;
+  justify-self: center;
 }
 
   
@@ -148,22 +153,43 @@ div#compare {
     position: absolute;
     display: flex;
     display: none;
-    width: 55%;
+    width: 50%;
     align-items: center;
     
     min-height: 55% ;
-    max-height: 80%;
+    max-height: 100%;
     font-size: 90%;
     float: right;
     background: #fff;
-    top: 20vh;
+    top: 70%;
     border-radius: 10px;
    
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     /* img{width: 100%;} */
 }
+@media screen and (max-width:1024px){
+    div#compare {
+        width: 100%;
+  }
 
+  td{
+    font-size: 80%;
+  }
+  .caixaInvisivel{
+    width: 10%   ;
+  }
+  tbody{
+    img{width: 80%;}
+  }
+  
+}
+
+
+
+.caixaInvisivel{
+    padding: 0%;
+}
 
 #botaoTable{
 width: 30%;

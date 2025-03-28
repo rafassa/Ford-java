@@ -51,6 +51,7 @@ header ul {
 
 ul {
 	display: inline-block;
+   
 }
 
 header {
@@ -90,16 +91,18 @@ header nav a:hover {
 nav li {
     display: inline;
     list-style: none;
+    
 }
 
 main {
   
     flex: 1;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    
+   display: flex;
+   justify-content: center;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 nav#social {
@@ -139,3 +142,24 @@ button {
     border: 0px;
     border-radius: 10px;
 }
+
+
+.botoes{
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.botaoRetroceder{
+    display: flex;
+     
+}
+
+
+
+.mainIndex{
+  height: 100%;
+}
+
+
