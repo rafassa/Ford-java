@@ -4,8 +4,8 @@ body {
     background: #FFFFFF;
     min-height: 100dvh;
     max-height: 100dvh;
-    min-width: 100dvw;
-    max-width: 100dvw;
+    min-width: 100%;
+    max-width: 100%;
     align-items: center;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -21,12 +21,13 @@ div#carousel {
     display: flex;
     justify-content: center;
 
-    img{width: 65%; }
+    
     width: 100%;
  
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    img{width: 65%; }
 }
 
 div#carousel-title a {
@@ -94,6 +95,7 @@ nav li {
 main {
   
     flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -124,7 +126,8 @@ footer {
 footer div {
     display: inline;
     float: right;
-    margin-right: 40px;
+ 
+    
 }
 
 button:hover {

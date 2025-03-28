@@ -2,15 +2,40 @@
 ul.modelcars {
     display: block;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-bottom: 40px;
+   width: 100%;
 }
 
 ul.modelcars li {
     display: inline-block;
     text-align: left;
- 
+    width: 25%;
     vertical-align: top;
+
+}
+
+.inforcar{
+    display: flex;
+  
+}
+
+@media only screen and (max-width:950PX){
+    ul.modelcars li {
+        width: 50%;
+        
+    }
+
+    .divTotal{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .textoDiv{
+        width: 100%;
+
+    }
 }
 
 img.photocar {
@@ -19,18 +44,31 @@ img.photocar {
 }
 
 .divTotal{
+    padding-top: 1%;
     display: flex;
-    height: 30vh;
+    height: 63vh;
     min-width: 100%;
     justify-content: center;
+    align-items: center;
+}
+
+.divTotal2{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    width: 100%;
+  
 }
 .videoDiv{
-width: 50em;
+width: 60%;
+
 }
 
 .textoDiv{
 min-width: 30%;
 max-width: 30%;
+align-items: center;
+align-self: center;
 }
 
 .video{
@@ -43,7 +81,9 @@ width: 100%;
     
 }
 
-
+.divbotao{
+    padding-bottom: 1em;
+}
 
 .checkbox {
     width: 30px;
@@ -129,7 +169,7 @@ div#compare {
 width: 30%;
 height: 2em;
 font-size: small;
-text-align: e;
+ 
 }
 
 #divbotao{
