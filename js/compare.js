@@ -1,5 +1,5 @@
 
-//car
+
 let carDict = {};
 let lista = []
 
@@ -21,7 +21,7 @@ class Car {
     }
 } 
 
-// search on array if exist carClass returning 1 if not return -1
+
 function GetcarDictPosition() {
     let list = document.querySelectorAll('input[onchange]:checked')
      lista = Array.from(list).map(cb => cb.value)

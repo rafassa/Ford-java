@@ -1,11 +1,9 @@
 
 
-//carousel
 
-//Array storage class
 let carouselArr = [];
 
-//class Carousel
+
 class Carousel {
 
    
@@ -20,7 +18,7 @@ class Carousel {
         this.titulos = document.querySelectorAll("main div a")
         this.imagens = document.querySelectorAll("main div img")
         if(arr){
-            console.log(carouselArr)
+            
             if(arr.length > 0){
                 Carousel._sequence = 0;
                 Carousel._size = arr.length;
@@ -47,7 +45,6 @@ class Carousel {
      }
      this._sequence++
      if(this._sequence == this._size){
-        this.imagens[0].style.display = "none";
         this._sequence = 0;
     }
     }
@@ -59,7 +56,7 @@ carouselArr.push(new Carousel("img\\imagem_1.jpg","Esta é a nova Ranger Ford 20
 carouselArr.push(new Carousel("img\\imagem_2.jpg","Ford a nossa história","https://www.ford.pt/experiencia-ford/ford-blog/o-nosso-legado#"));
 carouselArr.push(new Carousel("img\\imagem_3.jpg","Nova Ford Bronco Sport 2022","lancamento.html"));
 
-// console.log(carouselArr[0].img)
+
 
 for(let i = 0; i < carouselArr.length; i++ ){
 let img = document.createElement("img")
