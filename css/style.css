@@ -20,7 +20,7 @@ html {
 div#carousel {
     display: flex;
     justify-content: center;
-
+    position: relative;
     
     width: 100%;
  
@@ -143,23 +143,17 @@ button {
     border-radius: 10px;
 }
 
-
-.botoes{
-
-    display: flex;
-    justify-content: center;
+#avancar{
+    position: absolute;
+    right: 20%;
+    bottom: 35%;
+    height: 30%;
 }
-
-
-.botaoRetroceder{
-    display: flex;
-     
-}
-
-
-
-.mainIndex{
-  height: 100%;
+#voltar{
+position: absolute;
+left: 20%;
+bottom: 35%;
+height: 30%;
 }
 
 

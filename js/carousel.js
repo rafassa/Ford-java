@@ -5,7 +5,6 @@ let carouselArr = [];
 
 
 class Carousel {
-
    
 
     constructor(img, titulo, url){
@@ -22,8 +21,9 @@ class Carousel {
             if(arr.length > 0){
                 Carousel._sequence = 0;
                 Carousel._size = arr.length;
-                Carousel.Next(); //start
-                Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
+                Carousel.Next();
+                Carousel.Prev()
+                Carousel._interval = setInterval(function(){ Carousel.Next(); },200000);
             }
             
         } else {
@@ -40,7 +40,8 @@ class Carousel {
         this.titulos[this._sequence].style.display = "block";
 
         console.log(this._sequence)
-        
+
+     
         
      }
      this._sequence++
@@ -48,7 +49,13 @@ class Carousel {
         this._sequence = 0;
     }
     }
+
+    
+
+
 };
+
+
 
 
 
@@ -70,10 +77,37 @@ texto.setAttribute("href",carouselArr[i].url)
 document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", texto)
 
 
-}
+};
+
 
 
 
 Carousel.Start(carouselArr);
 
 
+Carousel.Prev = function() {
+    // Atualiza o índice para o anterior
+    this._sequence--;
+    if (this._sequence < 0) {
+        this._sequence = this._size - 1; // Se passar do início, vai para o último
+    }
+
+    // Exibe a imagem e título atualizados
+    for (let i = 0; i < this.imagens.length; i++) {
+        this.imagens[i].style.display = "none";
+        this.titulos[i].style.display = "none";
+    }
+    this.imagens[this._sequence].style.display = "block";
+    this.titulos[this._sequence].style.display = "block";
+
+    console.log("Voltar para:", this._sequence);
+};
+
+// Eventos de clique para os botões
+document.getElementById("nextButton").addEventListener("click", function() {
+    Carousel.Next(); // Avança o carrossel
+});
+
+document.getElementById("prevButton").addEventListener("click", function() {
+    Carousel.Prev(); // Volta no carrossel
+});
