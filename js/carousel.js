@@ -22,8 +22,7 @@ class Carousel {
                 Carousel._sequence = 0;
                 Carousel._size = arr.length;
                 Carousel.Next();
-                Carousel.Prev()
-                Carousel._interval = setInterval(function(){ Carousel.Next(); },200000);
+                Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
             }
             
         } else {
@@ -39,9 +38,10 @@ class Carousel {
         this.titulos[i].style.display = "none"
         this.titulos[this._sequence].style.display = "block";
 
-        console.log(this._sequence)
+       
 
-     
+        console.log("Ir para:", this._sequence);
+
         
      }
      this._sequence++
@@ -84,12 +84,28 @@ document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", tex
 
 Carousel.Start(carouselArr);
 
+Carousel.Proximo = function() {
+    for(let i = 0; i < this.imagens.length; i++){
+        this.imagens[i].style.display ="none";
+        this.imagens[this._sequence].style.display = "block";
+        this.titulos[i].style.display = "none"
+        this.titulos[this._sequence].style.display = "block";
 
-Carousel.Prev = function() {
-    // Atualiza o índice para o anterior
-    this._sequence--;
+        
+
+     
+        
+     }
+     
+    
+}
+Carousel.Anterior = function() {
+    clearInterval(Carousel._interval);
+
+
+    this._sequence--
     if (this._sequence < 0) {
-        this._sequence = this._size - 1; // Se passar do início, vai para o último
+        this._sequence = this._size - 1; 
     }
 
     // Exibe a imagem e título atualizados
@@ -99,15 +115,20 @@ Carousel.Prev = function() {
     }
     this.imagens[this._sequence].style.display = "block";
     this.titulos[this._sequence].style.display = "block";
+    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
 
     console.log("Voltar para:", this._sequence);
 };
 
 // Eventos de clique para os botões
-document.getElementById("nextButton").addEventListener("click", function() {
-    Carousel.Next(); // Avança o carrossel
+document.getElementById("avancar").addEventListener("click", function() {
+    
+    Carousel.Next(); 
+    clearInterval(Carousel._interval);
+    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
+
 });
 
-document.getElementById("prevButton").addEventListener("click", function() {
-    Carousel.Prev(); // Volta no carrossel
+document.getElementById("voltar").addEventListener("click", function() {
+    Carousel.Anterior(); 
 });
