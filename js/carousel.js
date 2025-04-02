@@ -32,28 +32,49 @@ class Carousel {
 
     static Next(){
        
+        
+
      for(let i = 0; i < this.imagens.length; i++){
         this.imagens[i].style.display ="none";
-        this.imagens[this._sequence].style.display = "block";
         this.titulos[i].style.display = "none"
+        this.imagens[this._sequence].style.display = "block";
         this.titulos[this._sequence].style.display = "block";
 
-       
-
-        console.log("Ir para:", this._sequence);
-
-        
      }
-     this._sequence++
-     if(this._sequence == this._size){
-        this._sequence = 0;
-    }
-    }
-
     
 
+    this._sequence++
+    if(this._sequence == this._size){
+        this._sequence = 0
+        
+    }
+    console.log("Ir para:", this._sequence);
+    }
 
-};
+    static Anterior() {
+        this._sequence--;
+
+
+        if (this._sequence < 0) {
+            this._sequence = this._size - 1; 
+        }
+    
+    
+        for (let i = 0; i < this.imagens.length; i++) {
+            this.imagens[i].style.display = "none";
+            this.titulos[i].style.display = "none";
+        }
+    
+        
+        this.imagens[this._sequence].style.display = "block";
+        this.titulos[this._sequence].style.display = "block";
+    
+        console.log("Voltar para:", this._sequence);
+    };
+    }
+ 
+
+
 
 
 
@@ -84,51 +105,23 @@ document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", tex
 
 Carousel.Start(carouselArr);
 
-Carousel.Proximo = function() {
-    for(let i = 0; i < this.imagens.length; i++){
-        this.imagens[i].style.display ="none";
-        this.imagens[this._sequence].style.display = "block";
-        this.titulos[i].style.display = "none"
-        this.titulos[this._sequence].style.display = "block";
-
-        
-
-     
-        
-     }
-     
-    
-}
-Carousel.Anterior = function() {
-    clearInterval(Carousel._interval);
+Carousel.Anterior
 
 
-    this._sequence--
-    if (this._sequence < 0) {
-        this._sequence = this._size - 1; 
-    }
 
-    // Exibe a imagem e título atualizados
-    for (let i = 0; i < this.imagens.length; i++) {
-        this.imagens[i].style.display = "none";
-        this.titulos[i].style.display = "none";
-    }
-    this.imagens[this._sequence].style.display = "block";
-    this.titulos[this._sequence].style.display = "block";
-    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
 
-    console.log("Voltar para:", this._sequence);
-};
 
-// Eventos de clique para os botões
+
+
 document.getElementById("avancar").addEventListener("click", function() {
-    
     Carousel.Next(); 
     clearInterval(Carousel._interval);
     Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
-
 });
 
 document.getElementById("voltar").addEventListener("click", function() {
     Carousel.Anterior(); 
+
+    clearInterval(Carousel._interval);
+    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
 });
