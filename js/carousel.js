@@ -1,6 +1,4 @@
 
-
-
 let carouselArr = [];
 
 
@@ -100,17 +98,7 @@ document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", tex
 
 };
 
-
-
-
 Carousel.Start(carouselArr);
-
-
-
-
-
-
-
 
 
 document.getElementById("avancar").addEventListener("click", function() {
