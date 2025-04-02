@@ -105,7 +105,7 @@ document.getElementById("carousel-title").insertAdjacentElement("beforeEnd", tex
 
 Carousel.Start(carouselArr);
 
-Carousel.Anterior
+
 
 
 

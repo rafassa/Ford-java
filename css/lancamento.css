@@ -5,7 +5,7 @@ ul.modelcars {
 
     margin-top: 10%;
     margin-bottom: 40px;
-   width: 100%;
+   width: 134%;
 }
 
 ul.modelcars li {
@@ -23,7 +23,7 @@ ul.modelcars li {
 
 @media only screen and (max-width:950PX){
     ul.modelcars li {
-        width: 100%;
+        width: 50%;
         
     }
 
