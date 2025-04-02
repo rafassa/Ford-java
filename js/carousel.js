@@ -12,8 +12,8 @@ class Carousel {
     }
       
     static Start(arr){
-        this.titulos = document.querySelectorAll("main div a")
-        this.imagens = document.querySelectorAll("main div img")
+        this.titulos = document.querySelectorAll("main div a");
+        this.imagens = document.querySelectorAll("main div img");
         if(arr){
             
             if(arr.length > 0){
@@ -34,7 +34,7 @@ class Carousel {
 
      for(let i = 0; i < this.imagens.length; i++){
         this.imagens[i].style.display ="none";
-        this.titulos[i].style.display = "none"
+        this.titulos[i].style.display = "none";
         this.imagens[this._sequence].style.display = "block";
         this.titulos[this._sequence].style.display = "block";
 
@@ -43,10 +43,10 @@ class Carousel {
 
     this._sequence++
     if(this._sequence == this._size){
-        this._sequence = 0
+        this._sequence = 0;
         
     }
-    console.log("Ir para:", this._sequence);
+
     }
 
     static Anterior() {
@@ -67,7 +67,7 @@ class Carousel {
         this.imagens[this._sequence].style.display = "block";
         this.titulos[this._sequence].style.display = "block";
     
-        console.log("Voltar para:", this._sequence);
+   
     };
     }
  

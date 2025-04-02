@@ -36,13 +36,13 @@ function SetCarToCompare(el, carClass) {
 
 
             GetcarDictPosition()
-            console.log("entrada", carDict)
+          
 
         }
         else{
             lista = lista.filter(valor => valor !== el.value);
             delete carDict[el.value]
-            console.log("saida", carDict)
+            
             
         }
     } else {
