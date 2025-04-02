@@ -38,16 +38,16 @@
             <div class="divTotalContato">
                 <h2 class="titulo">Sobre Você</h2>
             <form onsubmit="return false;">
-                <input type="text"  id="nomeid" name="nome" placeholder="NOME*" class="fordform" required>
-                <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
-                <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
-                <select name="contato" class="fordform" required>
+                <input required type="text"  id="nomeid" name="nome" placeholder="NOME*" class="fordform" >
+                <input required type="email" name="email" placeholder="E-MAIL*" class="fordform" >
+                <input required type="text" name="telefone" placeholder="TELEFONE*" class="fordform" >
+                <select required name="contato" class="fordform" >
                     <option selected>COMO DESEJA SER CONTATADO</option>
                     <option value="telefone">ELOGIO</option>
                     <option value="email">RECLAMAÇÃO</option>
-                    <option value="email">SOLICITAÇÃO</option>
+                    <option value="solitacao">SOLICITAÇÃO</option>
                 </select>   
-                <textarea name="texto" id="opcao" class="fordform" placeholder="DIGITE SEU TEXTO "></textarea>
+                <input type="text" name="texto" id="opcao"  class="fordform" placeholder="DIGITE SEU TEXTO* "></textarea>
             <button type="submit" onclick= "Post(this.form); Enviar();">Enviar</button>
             </form>
             </div>
