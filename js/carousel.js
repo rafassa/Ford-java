@@ -11,65 +11,46 @@ class Carousel {
         this.url = url
     }
       
-    static Start(arr){
+    static Start(arr) {
         this.titulos = document.querySelectorAll("main div a");
         this.imagens = document.querySelectorAll("main div img");
-        if(arr){
-            
-            if(arr.length > 0){
-                Carousel._sequence = 0;
-                Carousel._size = arr.length;
-                Carousel.Next();
-                Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
-            }
-            
+        if (arr && arr.length > 0) {
+            Carousel._sequence = 0;
+            Carousel._size = arr.length;
+            Carousel.Atualizar();
+            Carousel._interval = setInterval(function () {
+                Carousel.Proximo();
+            }, 2000);
         } else {
             throw "Method Start need a Array Variable.";
         }
     }
 
-    static Next(){
-       
-        
-
-     for(let i = 0; i < this.imagens.length; i++){
-        this.imagens[i].style.display ="none";
-        this.titulos[i].style.display = "none";
-        this.imagens[this._sequence].style.display = "block";
-        this.titulos[this._sequence].style.display = "block";
-
-     }
-    
-
-    this._sequence++
-    if(this._sequence == this._size){
-        this._sequence = 0;
-        
-    }
-
+    static Proximo() {
+        this._sequence++;
+        if (this._sequence === this._size) {
+            this._sequence = 0;
+        }
+        Carousel.Atualizar();
     }
 
     static Anterior() {
         this._sequence--;
-
-
         if (this._sequence < 0) {
-            this._sequence = this._size - 1; 
+            this._sequence = this._size - 1;
         }
-    
-    
+        Carousel.Atualizar();
+    }
+
+    static Atualizar() {
         for (let i = 0; i < this.imagens.length; i++) {
             this.imagens[i].style.display = "none";
             this.titulos[i].style.display = "none";
         }
-    
-        
         this.imagens[this._sequence].style.display = "block";
         this.titulos[this._sequence].style.display = "block";
-    
-   
-    };
     }
+}
  
 
 
@@ -102,14 +83,14 @@ Carousel.Start(carouselArr);
 
 
 document.getElementById("avancar").addEventListener("click", function() {
-    Carousel.Next(); 
+    Carousel.Proximo(); 
     clearInterval(Carousel._interval);
-    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
+    Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
 });
 
 document.getElementById("voltar").addEventListener("click", function() {
     Carousel.Anterior(); 
 
     clearInterval(Carousel._interval);
-    Carousel._interval = setInterval(function(){ Carousel.Next(); },2000);
+    Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
 });
