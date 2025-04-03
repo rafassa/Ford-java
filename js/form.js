@@ -22,7 +22,7 @@ function Post(form) {
             form.elements.namedItem("texto").value);
 
             console.log(data)
-
+            Enviar()
             form.reset();
 }
 
