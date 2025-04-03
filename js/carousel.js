@@ -32,6 +32,8 @@ class Carousel {
             this._sequence = 0;
         }
         Carousel.Atualizar();
+        clearInterval(Carousel._interval);
+        Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
     }
 
     static Anterior() {
@@ -40,6 +42,8 @@ class Carousel {
             this._sequence = this._size - 1;
         }
         Carousel.Atualizar();
+        clearInterval(Carousel._interval);
+        Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
     }
 
     static Atualizar() {
@@ -84,13 +88,8 @@ Carousel.Start(carouselArr);
 
 document.getElementById("avancar").addEventListener("click", function() {
     Carousel.Proximo(); 
-    clearInterval(Carousel._interval);
-    Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
 });
 
 document.getElementById("voltar").addEventListener("click", function() {
     Carousel.Anterior(); 
-
-    clearInterval(Carousel._interval);
-    Carousel._interval = setInterval(function(){ Carousel.Proximo(); },2000);
 });
